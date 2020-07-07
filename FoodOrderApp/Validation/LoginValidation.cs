@@ -24,13 +24,30 @@ namespace FoodOrderApp.Validation
             else if (customersList.Contains((from c in customersList where c.JMBG == username select c).FirstOrDefault()) && password == "Guest")
             {
                 FoodCustomer fc;
+                FoodOrder fo;
                 using (FoodOrderAppBaseEntities context = new FoodOrderAppBaseEntities())
                 {
                     fc = (from c in context.FoodCustomers where c.JMBG == username select c).FirstOrDefault();
+                    fo = (from o in context.FoodOrders where o.FoodCustomer.JMBG == fc.JMBG select o).FirstOrDefault();
                 }
-                CustomerView cv = new CustomerView(fc);
-                main.Close();
-                cv.Show();
+                if (fo == null)
+                {
+                    CustomerView cv = new CustomerView(fc);
+                    main.Close();
+                    cv.Show();
+                }
+                else if (fo.StatusOfOrder == "READY")
+                {
+                    MessageBox.Show("You order is ready!\nEnjoy your meal.", "Bon Appétit", MessageBoxButton.OK, MessageBoxImage.Hand);
+                }
+                else if (fo.StatusOfOrder == "PROCESSING")
+                {
+                    MessageBox.Show("You order is still processing.\nThank you for your patience.", "Almost there...", MessageBoxButton.OK, MessageBoxImage.Asterisk);
+                }
+                else if (fo.StatusOfOrder == "REJECTED")
+                {
+                    MessageBox.Show("You order is rejected.\nPlease try again.", "Rejected", MessageBoxButton.OK, MessageBoxImage.Warning);
+                }
             }
             else if (!customersList.Contains((from c in customersList where c.JMBG == username select c).FirstOrDefault()) && password == "Guest")
             {
