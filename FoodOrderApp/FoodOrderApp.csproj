@@ -90,6 +90,7 @@
     </Compile>
     <Compile Include="Model\FoodCustomerModel.cs" />
     <Compile Include="Model\FoodOrderModel.cs" />
+    <Compile Include="Model\MenuItemModel.cs" />
     <Compile Include="Validation\LoginValidation.cs" />
     <Compile Include="ViewModel\AdminViewModel.cs" />
     <Compile Include="ViewModel\CustomerViewModel.cs" />
