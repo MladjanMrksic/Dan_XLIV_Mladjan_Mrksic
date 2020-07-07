@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FoodOrderApp.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +23,7 @@ namespace FoodOrderApp.View
         public AdminView()
         {
             InitializeComponent();
+            DataContext = new AdminViewModel(this);
         }
     }
 }

@@ -88,6 +88,7 @@
     <Compile Include="Model\FoodCustomerModel.cs" />
     <Compile Include="Model\FoodOrderModel.cs" />
     <Compile Include="Validation\LoginValidation.cs" />
+    <Compile Include="ViewModel\AdminViewModel.cs" />
     <Compile Include="ViewModel\MainWindowViewModel.cs" />
     <Compile Include="ViewModel\ViewModelBase.cs" />
     <Page Include="View\AdminView.xaml">
