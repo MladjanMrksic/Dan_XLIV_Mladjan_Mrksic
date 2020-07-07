@@ -21,8 +21,7 @@ namespace FoodOrderApp.ViewModel
             view = av;
             foodOrders = fom.GetAllFoodOrders();
         }
-
-        public List<string> Statuses = new List<string> { "PROCESSING", "READY", "REJECTED" };
+        public List<string> Statuses { get; } = new List<string> { "PROCESSING", "READY", "REJECTED" };
 
         public string SelectedStatus
         {

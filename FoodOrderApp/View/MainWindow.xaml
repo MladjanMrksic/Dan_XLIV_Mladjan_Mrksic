@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FoodOrderApp"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="600" Background="CadetBlue">
     <Grid>
         <Label x:Name="UserNamelbl" Content="Username:" HorizontalAlignment="Left" Margin="236,144,0,0" VerticalAlignment="Top"/>
         <Label x:Name="Passwordlbl" Content="Password:" HorizontalAlignment="Left" Margin="241,192,0,0" VerticalAlignment="Top"/>

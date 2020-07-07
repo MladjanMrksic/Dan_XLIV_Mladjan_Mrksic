@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FoodOrderApp.View"
         mc:Ignorable="d"
-        Title="CustomerView" Height="450" Width="800">
+        Title="CustomerView" Height="450" Width="800" Background="CadetBlue">
     <Grid>
         <Grid>
             <Grid.RowDefinitions>

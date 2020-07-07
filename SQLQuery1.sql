@@ -33,4 +33,15 @@ MenuItemID int primary key identity(1,1) not null,
 MenuItemName nvarchar(50) not null,
 Price decimal (6,2) not null,
 )
+ 
+INSERT INTO FoodCustomer (JMBG) VALUES ('1234567890123');
+INSERT INTO FoodCustomer (JMBG) VALUES ('1122334455667');
+INSERT INTO FoodCustomer (JMBG) VALUES ('3210987654321');
 
+INSERT INTO FoodOrder (CustomerID, Price, StatusOfOrder) VALUES (1,350.00,'PROCESSING');
+INSERT INTO FoodOrder (CustomerID, Price, StatusOfOrder) VALUES (2,250.50,'READY');
+INSERT INTO FoodOrder (CustomerID, Price, StatusOfOrder) VALUES (3,400.00,'REJECTED');
+
+INSERT INTO FoodMenu (MenuItemName, Price) VALUES ('Pepperoni Pizza', 200);
+INSERT INTO FoodMenu (MenuItemName, Price) VALUES ('Capricciosa pizza', 150);
+INSERT INTO FoodMenu (MenuItemName, Price) VALUES ('Margherita Pizza', 250.50	);

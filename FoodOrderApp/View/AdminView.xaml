@@ -33,8 +33,10 @@
                         <DataGridTemplateColumn Header="Status">
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
-                                    <ComboBox Name="cmbStatus" SelectedValuePath="StatusOfOrder" SelectedValue="{Binding SelectedStatus, UpdateSourceTrigger=PropertyChanged}" ItemsSource="{Binding Statuses}">
-
+                                    <ComboBox Name="cmbStatus" SelectedValuePath="StatusOfOrder" SelectedValue="{Binding FOrder, UpdateSourceTrigger=PropertyChanged}" SelectedItem="{Binding SelectedStatus, Mode=TwoWay}">
+                                        <ComboBoxItem>PROCESSING</ComboBoxItem>
+                                        <ComboBoxItem>READY</ComboBoxItem>
+                                        <ComboBoxItem>REJECTED</ComboBoxItem>
                                     </ComboBox>
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
