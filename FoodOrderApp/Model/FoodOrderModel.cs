@@ -51,7 +51,7 @@ namespace FoodOrderApp.Model
             {
                 using (FoodOrderAppBaseEntities context = new FoodOrderAppBaseEntities())
                 {
-                    FoodOrder order = (from o in context.FoodOrders where o.OrderID == orderID select o).First();
+                    FoodOrder order = (from o in context.FoodOrders where o.OrderID == orderID select o).FirstOrDefault();
                     context.FoodOrders.Remove(order);
                     context.SaveChanges();
                 }
