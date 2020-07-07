@@ -20,10 +20,10 @@ namespace FoodOrderApp.View
     /// </summary>
     public partial class CustomerView : Window
     {
-        public CustomerView()
+        public CustomerView(FoodCustomer fc)
         {
             InitializeComponent();
-            DataContext = new CustomerViewModel(this);
+            DataContext = new CustomerViewModel(this,fc);
         }
     }
 }

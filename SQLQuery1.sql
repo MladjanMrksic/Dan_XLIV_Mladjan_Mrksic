@@ -16,20 +16,20 @@ drop table FoodMenu
 
 create table FoodCustomer
 (
-CustomerID int primary key identity(1,1),
+CustomerID int primary key identity(1,1) not null,
 JMBG nvarchar(13) Check (LEN(JMBG) = 13 and ISNUMERIC(JMBG) = 1) not null
 )
 create table FoodOrder
 (
-OrderID int primary key identity(1,1),
-CustomerID int foreign key references FoodCustomer(CustomerID),
+OrderID int primary key identity(1,1) not null,
+CustomerID int foreign key references FoodCustomer(CustomerID) not null,
 Price decimal (6,2) not null,
 StatusOfOrder nvarchar(50) Check (UPPER(StatusOfOrder) = 'PROCESSING' or UPPER(StatusOfOrder) = 'READY' or UPPER(StatusOfOrder) = 'REJECTED') not null
 )
 
 create table FoodMenu
 (
-MenuItemID int primary key identity(1,1),
+MenuItemID int primary key identity(1,1) not null,
 MenuItemName nvarchar(50) not null,
 Price decimal (6,2) not null,
 )
