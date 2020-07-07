@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FoodOrderApp.View"
         mc:Ignorable="d"
-        Title="AdminView" Height="450" Width="800">
+        Title="AdminView" Height="450" Width="800" Background="CadetBlue">
     <Grid>
         <Grid>
             <Grid.RowDefinitions>
@@ -33,10 +33,8 @@
                         <DataGridTemplateColumn Header="Status">
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
-                                    <ComboBox Name="Statuses" SelectedValuePath="StatusOfOrder" SelectedValue="{Binding FOrder, UpdateSourceTrigger=PropertyChanged}">
-                                        <ComboBoxItem>PROCESSING</ComboBoxItem>
-                                        <ComboBoxItem>READY</ComboBoxItem>
-                                        <ComboBoxItem>REJECTED</ComboBoxItem>
+                                    <ComboBox Name="cmbStatus" SelectedValuePath="StatusOfOrder" SelectedValue="{Binding SelectedStatus, UpdateSourceTrigger=PropertyChanged}" ItemsSource="{Binding Statuses}">
+
                                     </ComboBox>
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
@@ -55,7 +53,7 @@
                                 <DataTemplate>
                                     <Button Name="btnUpdateFoodOrder"
                                         Command="{Binding DataContext.UpdateFoodOrder, RelativeSource={RelativeSource FindAncestor,
-                                    AncestorType={x:Type Window}},UpdateSourceTrigger=PropertyChanged}" Content="Update"/>
+                                    AncestorType={x:Type Window}},UpdateSourceTrigger=PropertyChanged}"  Content="Update"/>
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
                         </DataGridTemplateColumn>

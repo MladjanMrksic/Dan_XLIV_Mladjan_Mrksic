@@ -22,6 +22,18 @@ namespace FoodOrderApp.ViewModel
             foodOrders = fom.GetAllFoodOrders();
         }
 
+        public List<string> Statuses = new List<string> { "PROCESSING", "READY", "REJECTED" };
+
+        public string SelectedStatus
+        {
+            get { return FOrder.StatusOfOrder; }
+            set
+            {
+                FOrder.StatusOfOrder = value;
+                OnPropertyChanged("SelectedStatus");
+            }
+        }
+
         private List<FoodOrder> foodOrders;
         public List<FoodOrder> FoodOrders
         {
@@ -94,8 +106,6 @@ namespace FoodOrderApp.ViewModel
         }
         private void UpdateFoodOrderExecute()
         {
-            
-            FOrder.StatusOfOrder = ComboBoxItem.cmbStatus
             fom.UpdateFoodOrder(FOrder);
             foodOrders = fom.GetAllFoodOrders();
         }
