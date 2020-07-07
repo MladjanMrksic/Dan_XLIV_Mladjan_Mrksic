@@ -27,5 +27,6 @@ namespace FoodOrderApp
     
         public virtual DbSet<FoodCustomer> FoodCustomers { get; set; }
         public virtual DbSet<FoodOrder> FoodOrders { get; set; }
+        public virtual DbSet<FoodMenu> FoodMenus { get; set; }
     }
 }

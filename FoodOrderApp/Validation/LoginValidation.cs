@@ -23,16 +23,18 @@ namespace FoodOrderApp.Validation
             }
             else if (customersList.Contains((from c in customersList where c.JMBG == username select c).FirstOrDefault()) && password == "Guest")
             {
+                CustomerView cv = new CustomerView();
                 main.Close();
-                MessageBox.Show("User menu");
+                cv.Show();
             }
             else if (!customersList.Contains((from c in customersList where c.JMBG == username select c).FirstOrDefault()) && password == "Guest")
             {
                 FoodCustomer fc = new FoodCustomer();
+                CustomerView cv = new CustomerView();
                 fc.JMBG = username;
-                fcm.AddFoodCustomer(fc);
+                fcm.AddFoodCustomer(fc);                
                 main.Close();
-                MessageBox.Show("User menu");
+                cv.Show();
             }
             else
             {

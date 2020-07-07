@@ -67,6 +67,9 @@
     <Compile Include="FoodCustomer.cs">
       <DependentUpon>FoodOrderAppDatabaseModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="FoodMenu.cs">
+      <DependentUpon>FoodOrderAppDatabaseModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="FoodOrder.cs">
       <DependentUpon>FoodOrderAppDatabaseModel.tt</DependentUpon>
     </Compile>
@@ -89,9 +92,14 @@
     <Compile Include="Model\FoodOrderModel.cs" />
     <Compile Include="Validation\LoginValidation.cs" />
     <Compile Include="ViewModel\AdminViewModel.cs" />
+    <Compile Include="ViewModel\CustomerViewModel.cs" />
     <Compile Include="ViewModel\MainWindowViewModel.cs" />
     <Compile Include="ViewModel\ViewModelBase.cs" />
     <Page Include="View\AdminView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\CustomerView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -106,6 +114,9 @@
     <Compile Include="Command\RelayCommand.cs" />
     <Compile Include="View\AdminView.xaml.cs">
       <DependentUpon>AdminView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\CustomerView.xaml.cs">
+      <DependentUpon>CustomerView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>

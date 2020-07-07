@@ -8,6 +8,7 @@
         <EntityTypeShape EntityType="FoodOrderAppBaseModel.FoodCustomer" Width="1.5" PointX="0.75" PointY="0.875" IsExpanded="true" />
         <EntityTypeShape EntityType="FoodOrderAppBaseModel.FoodOrder" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
         <AssociationConnector Association="FoodOrderAppBaseModel.FK__FoodOrder__Custo__4CA06362" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="FoodOrderAppBaseModel.FoodMenu" Width="1.5" PointX="0.75" PointY="3.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
