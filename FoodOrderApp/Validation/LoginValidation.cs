@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 
@@ -38,7 +39,10 @@ namespace FoodOrderApp.Validation
                 }
                 else if (fo.StatusOfOrder == "READY")
                 {
-                    MessageBox.Show("You order is ready!\nEnjoy your meal.", "Bon Appétit", MessageBoxButton.OK, MessageBoxImage.Hand);
+                    AutoClosingMessageBox.Show("You order is ready!\nEnjoy your meal.", "Bon Appétit", 2000);
+                    CustomerView cv = new CustomerView(fc);
+                    main.Close();
+                    cv.Show();
                 }
                 else if (fo.StatusOfOrder == "PROCESSING")
                 {
@@ -46,7 +50,10 @@ namespace FoodOrderApp.Validation
                 }
                 else if (fo.StatusOfOrder == "REJECTED")
                 {
-                    MessageBox.Show("You order is rejected.\nPlease try again.", "Rejected", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    AutoClosingMessageBox.Show("You order is rejected.\nPlease try again.", "Rejected", 2000);
+                    CustomerView cv = new CustomerView(fc);
+                    main.Close();
+                    cv.Show();
                 }
             }
             else if (!customersList.Contains((from c in customersList where c.JMBG == username select c).FirstOrDefault()) && password == "Guest")
