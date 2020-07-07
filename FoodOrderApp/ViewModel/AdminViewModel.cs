@@ -63,7 +63,8 @@ namespace FoodOrderApp.ViewModel
         }
         private void DeleteEmployeeExecute()
         {
-            fom.AddFoodOrder(FOrder);
+            fom.DeleteFoodOrder(FOrder.OrderID);
+            foodOrders = fom.GetAllFoodOrders();
         }
         private bool CanDeleteEmployeeExecute()
         {
