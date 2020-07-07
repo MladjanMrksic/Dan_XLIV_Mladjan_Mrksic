@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 using System.Windows.Input;
 
 namespace FoodOrderApp.ViewModel
@@ -77,6 +78,30 @@ namespace FoodOrderApp.ViewModel
                 return true;
             }
             return false;
+        }
+
+        private ICommand updateFoodOrder;
+        public ICommand UpdateFoodOrder
+        {
+            get
+            {
+                if (updateFoodOrder == null)
+                {
+                    updateFoodOrder = new RelayCommand(param => UpdateFoodOrderExecute(), param => CanUpdateFoodOrderExecute());
+                }
+                return updateFoodOrder;
+            }
+        }
+        private void UpdateFoodOrderExecute()
+        {
+            
+            FOrder.StatusOfOrder = ComboBoxItem.cmbStatus
+            fom.UpdateFoodOrder(FOrder);
+            foodOrders = fom.GetAllFoodOrders();
+        }
+        private bool CanUpdateFoodOrderExecute()
+        {            
+            return true;
         }
 
 

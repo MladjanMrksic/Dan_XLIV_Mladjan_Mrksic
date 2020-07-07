@@ -77,5 +77,22 @@ namespace FoodOrderApp.Model
                 MessageBox.Show("Exception " + ex.Message.ToString(), "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
+
+        public void UpdateFoodOrder(FoodOrder updatedOrder)
+        {
+            try
+            {
+                using (FoodOrderAppBaseEntities context = new FoodOrderAppBaseEntities())
+                {
+                    FoodOrder order = (from o in context.FoodOrders where o.OrderID == updatedOrder.OrderID select o).FirstOrDefault();
+                    order.StatusOfOrder = updatedOrder.StatusOfOrder;
+                    context.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Exception " + ex.Message.ToString(), "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
     }
 }

@@ -30,8 +30,17 @@
                         <DataGridTextColumn Header="Customer JMBG" Binding="{Binding FoodOrder.FoodCustomer.JMBG}"/>
                         <DataGridTextColumn Header="Total Price" Binding="{Binding Price}"/>
                         <DataGridTextColumn Header="Status" Binding="{Binding StatusOfOrder}"/>
-
-
+                        <DataGridTemplateColumn Header="Status">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <ComboBox Name="Statuses" SelectedValuePath="StatusOfOrder" SelectedValue="{Binding FOrder, UpdateSourceTrigger=PropertyChanged}">
+                                        <ComboBoxItem>PROCESSING</ComboBoxItem>
+                                        <ComboBoxItem>READY</ComboBoxItem>
+                                        <ComboBoxItem>REJECTED</ComboBoxItem>
+                                    </ComboBox>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
                         <DataGridTemplateColumn Header="Delete">
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
@@ -40,7 +49,16 @@
                                     AncestorType={x:Type Window}},UpdateSourceTrigger=PropertyChanged}" Content="Delete"/>
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
-                        </DataGridTemplateColumn>                        
+                        </DataGridTemplateColumn>
+                        <DataGridTemplateColumn Header="Update">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Name="btnUpdateFoodOrder"
+                                        Command="{Binding DataContext.UpdateFoodOrder, RelativeSource={RelativeSource FindAncestor,
+                                    AncestorType={x:Type Window}},UpdateSourceTrigger=PropertyChanged}" Content="Update"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
                     </DataGrid.Columns>
                 </DataGrid>
             </Grid>
