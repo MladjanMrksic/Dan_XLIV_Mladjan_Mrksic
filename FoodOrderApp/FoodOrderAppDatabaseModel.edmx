@@ -10,8 +10,6 @@
             <PropertyRef Name="CustomerID" />
           </Key>
           <Property Name="CustomerID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="FirstName" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="LastName" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="JMBG" Type="nvarchar" MaxLength="13" Nullable="false" />
         </EntityType>
         <EntityType Name="FoodOrder">
@@ -23,7 +21,7 @@
           <Property Name="Price" Type="decimal" Precision="6" Scale="2" Nullable="false" />
           <Property Name="StatusOfOrder" Type="nvarchar" MaxLength="1" Nullable="false" />
         </EntityType>
-        <Association Name="FK__FoodOrder__Custo__534D60F1">
+        <Association Name="FK__FoodOrder__Custo__59FA5E80">
           <End Role="FoodCustomer" Type="Self.FoodCustomer" Multiplicity="1" />
           <End Role="FoodOrder" Type="Self.FoodOrder" Multiplicity="*" />
           <ReferentialConstraint>
@@ -38,7 +36,7 @@
         <EntityContainer Name="FoodOrderAppBaseModelStoreContainer">
           <EntitySet Name="FoodCustomer" EntityType="Self.FoodCustomer" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="FoodOrder" EntityType="Self.FoodOrder" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__FoodOrder__Custo__534D60F1" Association="Self.FK__FoodOrder__Custo__534D60F1">
+          <AssociationSet Name="FK__FoodOrder__Custo__59FA5E80" Association="Self.FK__FoodOrder__Custo__59FA5E80">
             <End Role="FoodCustomer" EntitySet="FoodCustomer" />
             <End Role="FoodOrder" EntitySet="FoodOrder" />
           </AssociationSet>
@@ -52,8 +50,6 @@
             <PropertyRef Name="CustomerID" />
           </Key>
           <Property Name="CustomerID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="JMBG" Type="String" MaxLength="13" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="FoodOrders" Relationship="Self.FK__FoodOrder__Custo__4CA06362" FromRole="FoodCustomer" ToRole="FoodOrder" />
         </EntityType>
@@ -97,8 +93,6 @@
             <EntityTypeMapping TypeName="FoodOrderAppBaseModel.FoodCustomer">
               <MappingFragment StoreEntitySet="FoodCustomer">
                 <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
-                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
-                <ScalarProperty Name="LastName" ColumnName="LastName" />
                 <ScalarProperty Name="JMBG" ColumnName="JMBG" />
               </MappingFragment>
             </EntityTypeMapping>

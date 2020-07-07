@@ -1,5 +1,6 @@
 ﻿using FoodOrderApp.Command;
 using FoodOrderApp.Model;
+using FoodOrderApp.Validation;
 using FoodOrderApp.View;
 using System;
 using System.Collections.Generic;
@@ -14,6 +15,7 @@ namespace FoodOrderApp.ViewModel
     class MainWindowViewModel : ViewModelBase
     {
         MainWindow main;
+        LoginValidation lv = new LoginValidation();
 
         public MainWindowViewModel(MainWindow login)
         {
@@ -64,16 +66,7 @@ namespace FoodOrderApp.ViewModel
         }
         private void SubmitExecute()
         {
-            if (userName == "Employee" && password == "Employee")
-            {
-                AdminView av = new AdminView();
-                main.Close();
-                av.Show();
-            }
-            else
-            {
-                MessageBox.Show("Error");
-            }
+            lv.Login(userName, password, main);
         }
         private bool CanSubmitExecute()
         {
