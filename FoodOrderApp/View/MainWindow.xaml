@@ -9,9 +9,9 @@
     <Grid>
         <Label x:Name="UserNamelbl" Content="Username:" HorizontalAlignment="Left" Margin="236,144,0,0" VerticalAlignment="Top"/>
         <Label x:Name="Passwordlbl" Content="Password:" HorizontalAlignment="Left" Margin="241,192,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="UserNametxt" HorizontalAlignment="Left" Height="23" Margin="300,148,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="Passwordtxt" HorizontalAlignment="Left" Height="23" Margin="300,195,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="LogInbtn" Content="Log In" HorizontalAlignment="Left" Margin="300,258,0,0" VerticalAlignment="Top" Width="75"/>
+        <TextBox x:Name="UserNametxt" HorizontalAlignment="Left" Height="23" Margin="300,148,0,0" TextWrapping="Wrap" Text="{Binding UserName, UpdateSourceTrigger=PropertyChanged}"  VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="Passwordtxt" HorizontalAlignment="Left" Height="23" Margin="300,195,0,0" TextWrapping="Wrap" Text="{Binding Password, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="LogInbtn" Content="Log In" Command="{Binding Submit, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="300,258,0,0" VerticalAlignment="Top" Width="75"/>
 
     </Grid>
 </Window>
